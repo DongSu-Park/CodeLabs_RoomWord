@@ -8,7 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import kr.dev.dspark.roomwordsample.data.model.WordEntity
 import kr.dev.dspark.roomwordsample.databinding.ItemWordBinding
 
-class WordListAdapter : ListAdapter<WordEntity, WordListAdapter.WordViewHolder>(WordDiffCallback()) {
+class WordListAdapter :
+    ListAdapter<WordEntity, WordListAdapter.WordViewHolder>(WordDiffCallback()) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WordViewHolder {
         val binding = ItemWordBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return WordViewHolder(binding)
@@ -19,8 +20,9 @@ class WordListAdapter : ListAdapter<WordEntity, WordListAdapter.WordViewHolder>(
         holder.bind(current.word)
     }
 
-    inner class WordViewHolder(private val binding: ItemWordBinding) :  RecyclerView.ViewHolder(binding.root) {
-        fun bind(word : String?) {
+    inner class WordViewHolder(private val binding: ItemWordBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        fun bind(word: String?) {
             binding.tvWordItem.text = word
         }
     }

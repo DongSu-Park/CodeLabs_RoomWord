@@ -11,7 +11,7 @@ import kr.dev.dspark.roomwordsample.data.model.WordEntity
 interface WordDao {
 
     @Query("SELECT * FROM word_table ORDER BY word ASC")
-    suspend fun getAlphabetizedWords() : List<WordEntity>
+    suspend fun getAlphabetizedWords(): List<WordEntity>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insert(wordEntity: WordEntity)

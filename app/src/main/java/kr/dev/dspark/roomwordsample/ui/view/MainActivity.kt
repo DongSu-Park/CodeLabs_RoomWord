@@ -14,9 +14,9 @@ import kr.dev.dspark.roomwordsample.ui.viewmodel.MainViewModel
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
-    private lateinit var binding : ActivityMainBinding
-    private lateinit var vm : MainViewModel
-    private lateinit var mAdapter : WordListAdapter
+    private lateinit var binding: ActivityMainBinding
+    private lateinit var vm: MainViewModel
+    private lateinit var mAdapter: WordListAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,24 +33,25 @@ class MainActivity : AppCompatActivity() {
         vm.wordSelect()
     }
 
-    private val activityResultCallback = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
-        if (it.resultCode == RESULT_OK) {
-            val data = it.data
-            val inputWord = data?.getStringExtra("Reply") ?: ""
-            val isClear = data?.getBooleanExtra("Clear", false)
+    private val activityResultCallback =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+            if (it.resultCode == RESULT_OK) {
+                val data = it.data
+                val inputWord = data?.getStringExtra("Reply") ?: ""
+                val isClear = data?.getBooleanExtra("Clear", false)
 
-            if (inputWord.isNotEmpty()) {
-                val wordEntity = WordEntity(inputWord)
-                vm.wordInsert(wordEntity)
-                vm.wordSelect()
-            }
+                if (inputWord.isNotEmpty()) {
+                    val wordEntity = WordEntity(inputWord)
+                    vm.wordInsert(wordEntity)
+                    vm.wordSelect()
+                }
 
-            if (isClear!!) {
-                vm.wordDeleteAll()
-                vm.wordSelect()
+                if (isClear!!) {
+                    vm.wordDeleteAll()
+                    vm.wordSelect()
+                }
             }
         }
-    }
 
     private fun initListener() {
         binding.layoutFloatingInsert.setOnClickListener {

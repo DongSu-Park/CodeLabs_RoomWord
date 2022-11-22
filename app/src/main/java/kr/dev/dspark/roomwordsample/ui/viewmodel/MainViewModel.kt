@@ -17,9 +17,9 @@ class MainViewModel @Inject constructor(
     private val getWordInsertUseCase: GetWordInsertUseCase,
     private val getWordSelectUseCase: GetWordSelectUseCase,
     private val getWordDeleteAllUseCase: GetWordDeleteAllUseCase
-): ViewModel() {
+) : ViewModel() {
     private val _allWords = MutableLiveData<List<WordEntity>>()
-    val allWords : LiveData<List<WordEntity>> get() = _allWords
+    val allWords: LiveData<List<WordEntity>> get() = _allWords
 
     fun wordInsert(wordEntity: WordEntity) {
         viewModelScope.launch {

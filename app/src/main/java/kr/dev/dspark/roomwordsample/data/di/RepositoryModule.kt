@@ -14,7 +14,7 @@ import javax.inject.Singleton
 class RepositoryModule {
     @Singleton
     @Provides
-    fun provideWordRepository(wordDatabase: WordDatabase) : WordRepository {
+    fun provideWordRepository(wordDatabase: WordDatabase): WordRepository {
         return WordRepositoryImpl(wordDatabase.wordDao())
     }
 }

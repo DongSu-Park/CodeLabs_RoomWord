@@ -1,6 +1,6 @@
 package kr.dev.dspark.roomwordsample.ui.view
 
-import android.app.Activity
+
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
@@ -10,7 +10,7 @@ import kr.dev.dspark.roomwordsample.databinding.ActivityNewWordBinding
 
 @AndroidEntryPoint
 class NewWordActivity : AppCompatActivity() {
-    private lateinit var binding : ActivityNewWordBinding
+    private lateinit var binding: ActivityNewWordBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

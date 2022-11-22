@@ -15,19 +15,19 @@ import javax.inject.Singleton
 class UseCaseModule {
     @Provides
     @Singleton
-    fun provideGetWordInsertUseCase(wordRepository: WordRepository) : GetWordInsertUseCase {
+    fun provideGetWordInsertUseCase(wordRepository: WordRepository): GetWordInsertUseCase {
         return GetWordInsertUseCase(wordRepository)
     }
 
     @Provides
     @Singleton
-    fun provideGetWordSelectUseCase(wordRepository: WordRepository) : GetWordSelectUseCase {
+    fun provideGetWordSelectUseCase(wordRepository: WordRepository): GetWordSelectUseCase {
         return GetWordSelectUseCase(wordRepository)
     }
 
     @Provides
     @Singleton
-    fun provideGetWordDeleteAllUseCase(wordRepository: WordRepository) : GetWordDeleteAllUseCase {
+    fun provideGetWordDeleteAllUseCase(wordRepository: WordRepository): GetWordDeleteAllUseCase {
         return GetWordDeleteAllUseCase(wordRepository)
     }
 }
